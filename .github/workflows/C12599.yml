@@ -1,13 +1,10 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: C12599
 
 on:
   push:
-    branches: [ "C12599" ]
+    branches: [ "Storeapi" ]
   pull_request:
-    branches: [ "C12599" ]
+    branches: [ "Storeapi" ]
 
 jobs:
   test:
@@ -36,36 +33,36 @@ jobs:
           dotnet-version: 8.0.x
       - name: Restore dependencies
         run: |
-          cd C12599/Examen1/Api
+          cd Api
           dotnet restore
       - name: Build
         run: |
-          cd C12599/Examen1/Api
+          cd Api
           dotnet build --no-restore
       - name: Test
         run: |
-          cd C12599/Examen1/Api
+          cd Api
           dotnet test --no-build --verbosity normal
 
   publish-Api:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Build & Push Image
         run: |
-          cd C12599/Examen1/Api
-          echo "${{ secrets.DOCKERHUBPASSC12599  }}" | docker login -u "marianoda20027@gmail.com" --password-stdin
+          cd Api
+          echo "${{ secrets.DOCKERHUBPASSC12599 }}" | docker login -u "marianoda20027@gmail.com" --password-stdin
           docker image build -t marianoda2002/storeapi:latest .
           docker push marianoda2002/storeapi:latest
 
   publish-ui:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Build & Push Image
         run: |
-          cd C12599/Examen1/laboratorio6/laboratorio6
-          echo "${{ secrets.DOCKERHUBPASSC12599  }}" | docker login -u "marianoda20027@gmail.com" --password-stdin
+          cd UI
+          echo "${{ secrets.DOCKERHUBPASSC12599 }}" | docker login -u "marianoda20027@gmail.com" --password-stdin
           docker image build -t marianoda2002/react:latest .
           docker push marianoda2002/react:latest
 
