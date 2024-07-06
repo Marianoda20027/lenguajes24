@@ -48,7 +48,7 @@ The package diagram shows the modular organization of the system, grouping relat
 
 ### Campaigns Investigation Diagram
 
-![Campaigns Investigation Diagram](./images/investigacion.JPG)
+![Campaigns Investigation Diagram](./images/Investigacion.jpg)
 
 This diagram illustrates the structure and relationships of the research campaigns within the system.
 
