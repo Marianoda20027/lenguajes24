@@ -152,7 +152,7 @@ Security in this project is implemented using JWT (JSON Web Tokens) for authenti
 
 ## Authentication and Authorization
 
-### User Model and Seeder:
+User Model and Seeder:
 A user model with roles is created and a seeder is used to initialize the users.
 
 ```csharp
@@ -216,7 +216,7 @@ namespace storeapi.Models
 ```
 
 ## Authentication Controller:
-## A controller is created to handle login requests and generate JWT tokens.
+A controller is created to handle login requests and generate JWT tokens.
 ```csharp
 
 using System;
