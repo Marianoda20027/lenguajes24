@@ -1633,7 +1633,6 @@ Renders the component, including the pie chart and table of daily transactions.
                                         outerRadius={100}
                                         innerRadius={60}
                                         label
-                                    >
                                         {pieChartData.map((entry, index) => (
                                             <Cell key={`cell-${index}`} fill={entry.color} />
                                         ))}
